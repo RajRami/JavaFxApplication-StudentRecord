@@ -6,10 +6,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        ArrayList<Student> Students = new ArrayList<>(DBUtility.getStudentsFromDB());
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("table-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Students");

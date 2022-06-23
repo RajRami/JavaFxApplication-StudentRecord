@@ -1,6 +1,7 @@
 package com.example.test1;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Student {
@@ -106,11 +107,18 @@ public class Student {
         return province;
     }
 
+    public static List<String> getProvinceName()
+    {
+        //Province should be in the list of "AB","BC","MB","NB","NL","NS","NT","NU","ON","PE","QC","SK","YT"
+        List<String> provinceName= Arrays.asList("AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT");
+        Collections.sort(provinceName);
+        return provinceName;
+    }
     public void setProvince(String province) {
 
-        //Province should be in the list of "AB","BC","MB","NB","NL","NS","NT","NU","ON","PE","QC","SK","YT"
 
-        List<String> provinceName= Arrays.asList("AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT");
+
+        List<String> provinceName = getProvinceName();
         if(provinceName.contains(province))
             this.province = province;
         else
