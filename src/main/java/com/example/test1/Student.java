@@ -24,14 +24,14 @@ public class Student {
      * @param majorCode
      */
     public Student(int studentNum, String firstName, String lastName, String gender, String telephone, String province, int avgGrade, String majorCode) {
-        this.studentNum = studentNum;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.telephone = telephone;
-        this.province = province;
-        this.avgGrade = avgGrade;
-        this.majorCode = majorCode;
+        setStudentNum(studentNum);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setGender(gender);
+        setTelephone(telephone);
+        setProvince(province);
+        setMajorCode(majorCode);
+        setAvgGrade(avgGrade);
     }
 
     /**
@@ -96,7 +96,10 @@ public class Student {
     public void setTelephone(String telephone)
     {
         //Telephone number should match the North American dialing plan (NXX NXX-XXXX, where N denotes 2–9, and X is any digit 0–9).
-        this.telephone = telephone;
+        if(telephone.matches("\\(?[2-9]\\d{2}\\)?[-\\s]?[2-9]\\d{2}[-\\s]?\\d{4}"))
+            this.telephone = telephone;
+        else
+            throw new IllegalArgumentException("Invalid phone, Please enter valid 10 digit number");
     }
 
     public String getProvince() {
