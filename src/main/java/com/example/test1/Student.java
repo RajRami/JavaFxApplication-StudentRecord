@@ -36,7 +36,7 @@ public class Student {
     }
 
     /**
-     * Creating Getters and setters methods for all instance variables
+     * Creating Getters and setters methods for all instance   variables
      */
     public int getStudentNum() {
         return studentNum;
@@ -48,7 +48,7 @@ public class Student {
         if(studentNum > 200034000 && studentNum < 200070000)
             this.studentNum = studentNum;
         else
-            throw new IllegalArgumentException("Invalid Student#, The student number must be between 200034000 to 200070000");
+            System.out.println("Invalid Student#, The student number must be between 200034000 to 200070000");
     }
 
     public String getFirstName() {
@@ -63,7 +63,7 @@ public class Student {
         if (firstName.length() >= 1)
             this.firstName = firstName;
         else
-            throw new IllegalArgumentException("Invalid first name, must be 1 or more character");
+            System.out.println("Invalid first name, must be 1 or more character");
     }
 
     public String getLastName()
@@ -79,7 +79,7 @@ public class Student {
         if (lastName.length() >= 1)
             this.lastName = lastName;
         else
-            throw new IllegalArgumentException("Invalid last name, must be 1 or more character");
+            System.out.println("Invalid last name, must be 1 or more character");
     }
 
     public String getGender() {
@@ -100,7 +100,7 @@ public class Student {
         if(telephone.matches("\\(?[2-9]\\d{2}\\)?[-\\s]?[2-9]\\d{2}[-\\s]?\\d{4}"))
             this.telephone = telephone;
         else
-            throw new IllegalArgumentException("Invalid phone, Please enter valid 10 digit number");
+            System.out.println("Invalid phone, Please enter valid 10 digit number");
     }
 
     public String getProvince() {
@@ -116,13 +116,11 @@ public class Student {
     }
     public void setProvince(String province) {
 
-
-
         List<String> provinceName = getProvinceName();
         if(provinceName.contains(province))
             this.province = province;
         else
-            throw new IllegalArgumentException(province + " is not valid, choose one from this list" + provinceName);
+            System.out.println(province + " is not valid, choose one from this list" + provinceName);
     }
 
     public String getMajorCode() {
@@ -135,7 +133,7 @@ public class Student {
         if(majorCode == majorCode.toUpperCase())
             this.majorCode = majorCode;
         else
-            throw new IllegalArgumentException("Major Code must have all 4 upper case letters only");
+            System.out.println("Major Code must have all 4 upper case letters only");
     }
 
     public int getAvgGrade() {
@@ -148,6 +146,6 @@ public class Student {
         if (avgGrade >= 0 && avgGrade <= 100)
             this.avgGrade = avgGrade;
         else
-            throw new IllegalArgumentException("Average grade must be in the range of 0-100");
+            System.out.println("Average grade must be in the range of 0-100");
     }
 }

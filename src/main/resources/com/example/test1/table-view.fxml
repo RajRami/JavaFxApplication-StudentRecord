@@ -10,20 +10,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test1.TableViewController">
+<AnchorPane prefHeight="450.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test1.TableViewController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Students">
+            <Label fx:id="studentLabel" text="Students">
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </Label>
             <TableView fx:id="tableView" prefHeight="359.0" prefWidth="680.0">
               <columns>
-                <TableColumn fx:id="studentId" prefWidth="75.0" text="Student#" />
-                <TableColumn fx:id="firstName" prefWidth="75.0" text="First Name" />
+                <TableColumn fx:id="studentId" prefWidth="159.3333387374878" text="Student#" />
+                <TableColumn fx:id="firstName" prefWidth="35.33331298828125" text="First Name" />
                   <TableColumn fx:id="lastName" prefWidth="75.0" text="Last Name" />
                   <TableColumn fx:id="gender" prefWidth="75.0" text="Gender " />
                   <TableColumn fx:id="province" prefWidth="75.0" text="Province" />
@@ -31,28 +30,28 @@
                   <TableColumn fx:id="major" prefWidth="75.0" text="Major" />
                   <TableColumn fx:id="avgGrade" prefWidth="75.0" text="Avg Grade" />
               </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Label">
+                  <Label fx:id="msgLabel" text="Number of Students:">
                      <HBox.margin>
-                        <Insets bottom="5.0" right="150.0" />
+                        <Insets bottom="5.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox prefWidth="150.0" promptText="Select Province">
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Select Province">
                      <HBox.margin>
                         <Insets left="150.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button fx:id="button" mnemonicParsing="false" text="Load All Students">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets left="20.0" right="70.0" />
                      </HBox.margin>
                   </Button>
                </children>
